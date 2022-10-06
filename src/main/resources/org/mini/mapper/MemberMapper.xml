@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mini.mapper.MemberMapper">
+<!-- 회원가입 -->
+<insert id="register">
+   INSERT INTO members(
+      userId,
+      userPwd,
+      userName,
+      email,
+      phoneNo,
+      address,
+      regDate)
+      VALUES( #{userId},
+            #{userPwd},
+            #{userName},
+            #{email},
+            #{phoneNo},
+            #{address},
+            #{regDate})
+</insert>
+<!-- 아이디 중복 체크  -->
+<select id="idCheck" resultType="int">
+     
+        select count(*) from members where userId = #{userId}
+     
+     </select>
+<!-- 로그인 -->
+<select id="login" resultType="org.mini.vo.MemberVO">
+        SELECT * FROM members
+        WHERE userId = #{userId} AND userPwd = #{userPwd}
+</select>
+<!-- 새정보수정용 -->
+<select id="loginNew" resultType="org.mini.vo.MemberVO">
+        SELECT * FROM members
+        WHERE userId = #{userId}
+</select>
+
+
+
+<!-- 마이페이지 -->
+<update id="mypage">
+      UPDATE members SET 
+      userId = #{userId},
+      userPwd = #{userPwd},
+      email = #{email},
+      phoneNo = #{phoneNo},
+      regDate = #{regDate}
+      WHERE userId = #{userId}
+   </update>
+
+<!-- 회원탈퇴  -->   
+<delete id="memberDelete">
+         delete 
+         from members
+         where userId = #{userId} and userPwd = #{userPwd}
+   </delete>
+
+</mapper>

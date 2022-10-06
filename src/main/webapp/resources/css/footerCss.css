@@ -1,0 +1,83 @@
+/* footer */
+#footWrap {
+  font-size: 13px;
+  border-top: 2px solid #666666;
+  padding-top: 23px;
+  padding-bottom: 30px;
+  background-color: rgb(243, 242, 234);
+  margin-top: 200px;
+}
+
+#footWrap .section {
+  position: relative;
+}
+
+.info {
+  overflow: hidden;
+  padding: 14px;
+  padding-left: 0;
+}
+
+.info li {
+  float: left;
+}
+
+.info li:first-child a {
+  padding-left: 0;
+  font-weight: bold;
+  color: #006bc2;
+}
+
+.info li:first-child a:before {
+  display: none;
+}
+
+.info li a {
+  padding: 0 14px;
+  color: #282828;
+  font-size: 13px;
+}
+
+.info li a:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #797979;
+}
+
+.address {
+  position: relative;
+  padding-top: 5px;
+  line-height: 1.4;
+  color: #747474;
+}
+
+.address dl {
+  overflow: hidden;
+  float: left;
+}
+
+.address dl:first-child dt {
+  display: block;
+  text-indent: -999em;
+  margin-left: -100px;
+}
+
+.address dl dt {
+  float: left;
+}
+
+.address dl dd {
+  float: left;
+  margin-right: 10px;
+  letter-spacing: -0.4px;
+}
+
+.address span {
+  display: block;
+  clear: both;
+  font-size: 12px;
+  letter-spacing: 0px;
+}

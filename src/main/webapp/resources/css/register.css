@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+  #background{
+    background-image: url(./images/login_bg.jpg);
+    background-size: cover;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    
+  }        
+  .register{
+              width: 550px;
+              margin: 200px auto 0;
+              padding: 15px 20px;
+              background: white;
+              color: black;
+              font-size: 14px;
+              text-align: left;
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+              border-radius: 40px;
+          }
+          .register h3{
+              font-size: 30px;
+              margin-bottom: 20px;
+              margin-top: 20px;
+              color: tomato;
+              text-align: center;
+          }
+          .register input{
+              width: 100%;
+              height: 50px;
+              outline: none;
+              padding: 10px;
+              border: 1px solid #707070;
+              transition: 0.3s;
+              border-radius: 40px;
+              padding: 0px 20px;
+              margin-bottom: 10px;
+          }
+          .register input:valid, .register input:focus{
+              border: 1px solid #2b2e4a;
+          }
+          .register .center{
+              display: flex;
+              align-items: center;
+          }
+          .register .flex{
+              display: flex;
+              flex-direction: column;
+          }
+          .register .flex .container{
+              display: grid;
+              grid-template-columns: 1fr 3fr 1fr;
+              margin-bottom: 10px;
+          }
+          .register .flex .container .item:first-child{
+             margin-right: 10px;
+          }
+          .register .flex .container .item .idcheck{
+              height: 50px;
+              margin-left: 20px;
+              padding: 15px;
+              background: rgb(86, 91, 163);
+              border: 1px solid #2b2e4a;
+              color: white;
+              font-size: 12px;
+              transition: 0.3s;
+              border-radius: 40px;
+          }
+          .register .flex .container .item .idcheck:hover{
+              background: rgb(86, 91, 163);
+              background: #2b2e4a;
+              color: white;
+          }
+          .register .flex .container .item select{
+              width: 40%;
+              height: 50px;
+              padding: 10px;
+              border: 1px solid #2b2e4a;
+              border-radius: 40px;
+              margin-bottom: 10px;
+          }
+          .register input.submit{
+              width: 100%;
+              height: 40px;
+              color: white;
+              border: none;
+              font-size: 1.2em;
+              background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
+              transition: 0.3s;
+              border-radius: 40px;
+          }
+          .register .flex .container:last-child{
+              margin: 0;
+          }
+          .register .submit:hover{
+              width: 100%;
+              height: 40px;
+              border: none;
+              color: white;
+              background: linear-gradient(to left, rgb(255, 77, 46), rgb(248, 132, 7));
+          }
+         

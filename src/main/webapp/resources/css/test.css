@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Qwitcher Grypen", cursive;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fbb04c;
+  background-size: cover;
+}
+
+body {
+  margin-top: 0px;
+  font-family: "Trebuchet MS", serif;
+  line-height: 1.6;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+
+/* footer */
+#footWrap {
+  font-size: 13px;
+  border-top: 2px solid #666666;
+  padding-top: 23px;
+  padding-bottom: 30px;
+  background-color: rgb(243, 242, 234);
+}
+
+#footWrap .section {
+  position: relative;
+}
+
+.info {
+  overflow: hidden;
+  padding: 14px;
+  padding-left: 0;
+}
+
+.info li {
+  float: left;
+}
+
+.info li:first-child a {
+  padding-left: 0;
+  font-weight: bold;
+  color: #006bc2;
+}
+
+.info li:first-child a:before {
+  display: none;
+}
+
+.info li a {
+  padding: 0 14px;
+  color: #282828;
+  font-size: 13px;
+}
+
+.info li a:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #797979;
+}
+
+.address {
+  position: relative;
+  padding-top: 5px;
+  line-height: 1.4;
+  color: #747474;
+}
+
+.address dl {
+  overflow: hidden;
+  float: left;
+}
+
+.address dl:first-child dt {
+  display: block;
+  text-indent: -999em;
+  margin-left: -100px;
+}
+
+.address dl dt {
+  float: left;
+}
+
+.address dl dd {
+  float: left;
+  margin-right: 10px;
+  letter-spacing: -0.4px;
+}
+
+.address span {
+  display: block;
+  clear: both;
+  font-size: 12px;
+  letter-spacing: 0px;
+}
+
+/* body {
+  margin: 0; 리셋을 하지 않은 경우 추가  
+}
+*/
+.content {
+  min-height: calc(100vh - 20px);
+}
+footer {
+  height: 20px;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mini.mapper.ReservationMapper">
+	<select id ="getList" resultType="org.mini.vo.ReservationVO">
+		select * from Reservation where reserveno > 0
+	</select>
+	
+	<insert id = "insert">
+		insert into Reservation (classroom, reservedate, reservetime, writer)
+		values(#{classroom}, #{reservedate}, #{reservetime}, #{writer})
+	</insert>
+	
+	<insert id = "insertSelectKey">
+		insert into Reservation(classroom, reservedate, reservetime, writer)
+		values (#{classroom}, #{reservedate}, #{reservetime},#{writer})
+		<selectKey resultType = "long" keyProperty = "reserveno" order = "AFTER">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<select id = "read" resultType="org.mini.vo.ReservationVO">
+		select * from Reservation where reserveno=#{reserveno}
+	</select>
+	
+	<delete id = "delete">
+		delete from Reservation where reserveno=#{reserveno}
+	</delete>
+	
+	<update id = "update">
+		update Reservation
+		set classroom = #{classroom},
+		reservedate = #{reservedate},
+		reservetime = #{reservetime},
+		writer = #{writer},
+		regDate = now()
+		where reserveno=#{reserveno}
+	</update>
+	
+</mapper>

@@ -1,0 +1,238 @@
+/* 초기화 */
+*{
+    margin:0; padding:0;
+    font: normal 12px 'Jua';
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+ul{
+    list-style:none;
+}
+.main_body{
+    
+    --minViewportSize: 320;
+    --maxViewportSize: 1920;
+}
+
+/* 사이드 바*/
+.menu ::before{
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+}
+.menu label::before{ content: '\e5d2'; }
+.menu li:nth-child(1) a::before{ content: '\f02e'; }
+.menu li:nth-child(2) a::before{ content: '\e8d6'; }
+.menu li:nth-child(3) a::before{ content: '\e88a'; }
+.menu li:nth-child(4) a::before{ content: '\e8cc'; }
+.menu li:nth-child(5) a::before{ content: '\e87d'; }
+.menu li:nth-child(6) a::before{ content: '\e8b8'; }
+#expand-menu { /* 체크박스 폼 요소 감춤 */
+    display: none;
+}
+#expand-menu:checked ~ ul { /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
+    display: block;
+    height: auto;
+}
+.menu {
+    display: block;
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* 반응형 애니메이션용 */
+    transition: all 0.5s ease; /* 반응형 애니메이션 */
+    position:fixed;
+    z-index: 1000;
+    top: 200px;
+    right:50px;
+    
+}
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu a, .menu > label {
+    display: block;
+    height: 25px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+.menu a:hover {
+    color: #000;
+}
+.menu ul li:hover, .menu > label:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+.menu div {
+    line-height: 1.5;
+    font-size: 1em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 50px; /* 아이콘과 텍스트 사이 여백 */
+}
+@media screen and (max-width:1023px) {
+    .menu { /* 1단계 */
+        width: 60px;
+    }
+}
+@media screen and (max-width:560px) {
+    .menu #expand-menu:not(:checked) ~ ul { /* 2단계 */
+        display: none;
+    }
+}
+.menu div {
+    position: absolute; /* 절대 위치로 텍스트 고정 */
+    left: 50px;
+    line-height: 1.5;
+    font-size: 1em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 20px; /* 패딩 20p로 축소 */
+}
+
+/* 헤더 */
+#main_header{
+    background-color: #f8eee1;
+}
+#head_main{
+    top:0; 
+    left:0;
+
+    text-align: center;
+    height:120px;
+
+}
+.logo{
+    display: inline;
+    
+}
+.logo img{
+    margin-top:40px;
+    margin-left:270px;
+    width:200px;
+}
+
+#main_gnb{
+    /* border-top: 1px solid #9C9C9C;
+    border-bottom: 1px solid #9C9C9C; */
+    right:0px;
+    top:0px;
+    /* padding-left: 140px; */
+    display: block;
+    text-align: center;
+    
+}
+#main_gnb span{
+    height: 70px;
+    line-height:70px;
+}
+#main_gnb>ul>li{ 
+    float:left ;
+    
+}
+
+#main_gnb > ul{
+    display:block;
+}
+#main_gnb > ul > li { 
+    padding-left: 50px; 
+    padding-right: 50px; 
+    position:relative; 
+    
+}
+#main_gnb > ul > li > span { 
+    display:block; 
+    line-height: 70px; 
+    cursor:pointer; 
+    font-size: 13px;
+}
+#main_gnb ul li .sub { 
+    text-align: center;
+    display:none; 
+    position:absolute; 
+    left:-1px; 
+    top:70px; 
+    z-index:999; 
+    width: 145px; 
+    height: 150px; 
+    background-color: #f8eee1; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#main_gnb ul li .sub li { 
+    line-height: 38px; 
+}
+#main_gnb ul li .sub li>a{
+    color: black;
+    font-size: small;
+}
+#main_gnb ul li .sub li:hover a { 
+    color:rgb(255, 85, 0); 
+}
+#main_gnb ul li:hover .sub { 
+    display:block; 
+}
+#main_gnb ul li:hover span { 
+    color:deepskyblue; 
+}
+
+#head_top_nav {
+    
+    height: 70px;
+    line-height: 70px;
+    width:980px;
+    background-color: #f8eee1;
+    margin-left: 17%;
+    
+}
+.head_top_nav{
+    text-align:center;
+    display:inline;
+    
+}
+
+.head_top_left{
+    float:left;
+    display:inline;
+    line-height:70px;
+    padding-left:15px;
+    
+}
+#head_top_left>a{
+    font-size: small;
+}
+.head_top_left>a{
+    color:rgb(0, 0, 0);
+    margin-left: 0px;
+}
+.head_top_left>span{
+    margin-top: 10px;
+}
+.head_top_right {
+    display:inline;
+    line-height: 70px;
+    float:right;
+    padding-right:15px;
+}
+#head_top_right>a{
+    font-size: small;
+}
+.head_top_right>a{
+    color:rgb(0, 0, 0);
+}
+/* 콘텐츠 */
+#content{
+    width:100%;
+    height:500px;
+}
